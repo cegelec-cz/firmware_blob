@@ -1,6 +1,10 @@
 #ifndef FIRMWARE_BLOB_FIRMWARE_BLOB_H
 #define FIRMWARE_BLOB_FIRMWARE_BLOB_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <linux/types.h>
 
 typedef enum {
@@ -38,5 +42,9 @@ typedef enum {
   VALIDATE_BLOB_ERR_INTERNAL,
   VALIDATE_BLOB_ERR_COUNT,
 } validate_blob_err_t;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // FIRMWARE_BLOB_FIRMWARE_BLOB_H

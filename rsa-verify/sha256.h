@@ -8,6 +8,10 @@
 #ifndef __CROS_EC_SHA256_H
 #define __CROS_EC_SHA256_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define SHA256_DIGEST_SIZE 32
 #define SHA256_BLOCK_SIZE 64
 
@@ -26,5 +30,9 @@ uint8_t *SHA256_final(struct sha256_ctx *ctx);
 
 void hmac_SHA256(uint8_t *output, const uint8_t *key, const int key_len,
 		 const uint8_t *message, const int message_len);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif  /* __CROS_EC_SHA256_H */

@@ -6,6 +6,10 @@
 #ifndef __CROS_EC_RSA_H
 #define __CROS_EC_RSA_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define CONFIG_RSA_KEY_SIZE 2048 /* default to 2048-bit key length */
 // Define for 3 otherwise it's 65537
 // #define CONFIG_RSA_EXPONENT_3
@@ -25,5 +29,9 @@ int rsa_verify(const struct rsa_public_key *key,
 	       const uint8_t *signature,
 	       const uint8_t *sha,
 	       uint32_t *workbuf32);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __CROS_EC_RSA_H */

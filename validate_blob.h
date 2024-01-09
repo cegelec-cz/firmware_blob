@@ -1,6 +1,10 @@
 #ifndef FIRMWARE_BLOB_VALIDATE_BLOB_H
 #define FIRMWARE_BLOB_VALIDATE_BLOB_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "boot_policy.h"
 #include "firmware_blob.h"
 
@@ -23,5 +27,9 @@ struct validate_blob_input
 validate_blob_err_t
 validate_blob(const struct validate_blob_input *validate_blob_input,
               const char **feedback);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // FIRMWARE_BLOB_VALIDATE_BLOB_H

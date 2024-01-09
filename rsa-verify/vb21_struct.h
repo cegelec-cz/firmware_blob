@@ -14,6 +14,11 @@
 
 #ifndef VBOOT_REFERENCE_VB21_STRUCT_H_
 #define VBOOT_REFERENCE_VB21_STRUCT_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 
 #include "2id.h"
@@ -342,5 +347,9 @@ struct vb21_fw_preamble {
 } __attribute__((packed));
 
 #define EXPECTED_VB21_FW_PREAMBLE_SIZE (EXPECTED_VB21_STRUCT_COMMON_SIZE + 20)
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif  /* VBOOT_REFERENCE_VB21_STRUCT_H_ */

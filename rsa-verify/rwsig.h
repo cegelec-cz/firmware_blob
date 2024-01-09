@@ -1,6 +1,10 @@
 #ifndef VBOOT_RWSIG_H
 #define VBOOT_RWSIG_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "rsa.h"
 #include "vb21_struct.h"
 
@@ -15,5 +19,9 @@ int vblock_check_signature(
 	const uint8_t *rwdata,
 	const struct vb21_packed_key *vb21_key,
 	const struct vb21_signature *vb21_sig);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // VBOOT_RWSIG_H

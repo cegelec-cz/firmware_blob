@@ -1,6 +1,10 @@
 #ifndef FIRMWARE_BLOB_BOOT_POLICY_H
 #define FIRMWARE_BLOB_BOOT_POLICY_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef enum {
   BOARD_BOOT_POLICY_NOT_SET,
   BOARD_BOOT_POLICY_PRODUCTION,
@@ -9,5 +13,9 @@ typedef enum {
   BOARD_BOOT_POLICY_DEVELOPMENT,
   BOARD_BOOT_POLICY_COUNT
 } board_boot_policy_t;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // FIRMWARE_BLOB_BOOT_POLICY_H
