@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include <linux/types.h>
+#include <stdint.h>
 
 typedef enum {
   SW_TYPE_RECOVERY,
