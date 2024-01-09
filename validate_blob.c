@@ -215,7 +215,10 @@ validate_blob_err_t
 validate_blob(const struct validate_blob_input *validate_blob_input,
               const char **feedback)
 {
-  validate_blob_err_t ret = 0;
+  validate_blob_err_t ret = VALIDATE_BLOB_ERR_NONE;
+  const struct authorization_record *authorization_record = NULL;
+  struct blob_header blob_header = {};
+  int has_valid_signature = 0;
 
   if (validate_blob_input->board_boot_policy >= BOARD_BOOT_POLICY_COUNT ||
       validate_blob_input->board_partition >= BOARD_PARTITION_COUNT) {
@@ -223,8 +226,6 @@ validate_blob(const struct validate_blob_input *validate_blob_input,
     goto out;
   }
 
-  struct blob_header blob_header;
-  int has_valid_signature = 0;
   ret = verify_blob_integrity(validate_blob_input->blob,
                               validate_blob_input->blob_len, &blob_header,
                               &has_valid_signature);
@@ -236,7 +237,7 @@ validate_blob(const struct validate_blob_input *validate_blob_input,
     goto out;
   }
 
-  const struct authorization_record *authorization_record =
+  authorization_record =
       &boot_policy_sw_type_authorization_matrix
           [validate_blob_input->board_boot_policy][blob_header.sw_type];
 
