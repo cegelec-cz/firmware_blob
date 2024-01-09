@@ -8,6 +8,8 @@ extern "C" {
 #include "boot_policy.h"
 #include "firmware_blob.h"
 
+#include <stdint.h>
+
 typedef enum {
   BOARD_PARTITION_NONE,
   BOARD_PARTITION_RECOVERY,
@@ -17,7 +19,7 @@ typedef enum {
 
 struct validate_blob_input
 {
-  const void *blob;
+  const uint8_t *blob;
   uint32_t blob_len;
   board_boot_policy_t board_boot_policy;
   uint32_t board_project_id;

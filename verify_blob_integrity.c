@@ -88,7 +88,7 @@ static inline uint32_t get_blob_data_len(const struct blob_header *header)
 }
 
 validate_blob_err_t
-verify_blob_integrity(const void *blob, uint32_t blob_len,
+verify_blob_integrity(const uint8_t *blob, uint32_t blob_len,
                       struct blob_header *parsed_blob_header_out,
                       int *has_valid_signature)
 {
